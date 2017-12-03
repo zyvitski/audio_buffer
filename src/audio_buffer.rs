@@ -88,7 +88,12 @@ where
     pub fn get(&self, index: usize) -> Option<&'a [T]> {
         let idx = index * self.chans;
         if idx < self.data.len() {
-            unsafe { Some(::std::slice::from_raw_parts(&self.data[idx], self.chans)) }
+            unsafe {
+                Some(::std::slice::from_raw_parts(
+                    &self.data[idx] as *const T,
+                    self.chans,
+                ))
+            }
         } else {
             None
         }
