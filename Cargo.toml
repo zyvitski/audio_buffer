@@ -1,0 +1,6 @@
+[package]
+name = "audio_buffer"
+version = "0.1.0"
+authors = ["Alex Zywicki <alexander.zywicki@gmail.com>"]
+
+[dependencies]
